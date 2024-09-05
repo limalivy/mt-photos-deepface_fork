@@ -14,7 +14,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install ultralytics
 
 RUN mkdir -p /models/.deepface/weights && \
-    wget -nv -O /models/.deepface/weights/retinaface.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/retinaface.h5 && \
+    wget -nv -O /models/.deepface/weights/yolov8n-face.pt https://drive.google.com/uc?id=1qcr9DbgsX3ryrz2uU8w4Xm3cOrRywXqb && \
     wget -nv -O /models/.deepface/weights/facenet512_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/facenet512_weights.h5
 
 COPY run.sh .
