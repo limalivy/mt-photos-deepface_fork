@@ -3,7 +3,7 @@ USER root
 
 # COPY ./sources.list /etc/apt/sources.list
 RUN apt update && \
-    apt install -y libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libfontconfig1 && \
+    apt install -y libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libfontconfig1 pkg-config libhdf5-dev python3-h5py && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/log/*
 
 WORKDIR /app
