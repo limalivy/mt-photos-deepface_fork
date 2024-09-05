@@ -5,6 +5,10 @@ on:
     branches:
       - master  
   workflow_dispatch: 
+
+env:
+  APP_NAME: mt-arm-deepface
+  DOCKERHUB_REPO: litiy/mt-arm-deepface
   
 jobs:
   build-and-push:
