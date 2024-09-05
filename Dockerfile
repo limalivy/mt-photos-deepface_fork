@@ -17,10 +17,11 @@ RUN mkdir -p /models/.deepface/weights && \
     wget -nv -O /models/.deepface/weights/retinaface.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/retinaface.h5 && \
     wget -nv -O /models/.deepface/weights/facenet512_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/facenet512_weights.h5
 
-
+COPY run.sh .
+RUN chmod 777 run.sh
 COPY server.py .
 ENV DEEPFACE_HOME=/models
 ENV API_AUTH_KEY=mt_photos_ai_extra
 EXPOSE 8066
 
-CMD [ "python3", "server.py" ]
+CMD [ "sh", "run.sh" ]
